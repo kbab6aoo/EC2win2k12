@@ -1,0 +1,9 @@
+---
+
+target_aws_region: eu-west-1
+jagho_vpc_id: vpc-f99d689d
+jagho_subnet_id: subnet-cb74a4af
+jagho_ami_image: ami-6182e612
+jagho_instance_size: m4.large
+jagho_count_tag_name: ap-EC2w2k12
+jagho_instance_tags: ap-EC2w2k12

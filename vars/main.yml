@@ -1,0 +1,9 @@
+---
+
+target_aws_region: eu-west-1
+dyson_vpc_id: vpc-f99d689d
+dyson_subnet_id: subnet-cb74a4af
+dyson_ami_image: ami-6182e612
+dyson_instance_size: m4.large
+dyson_count_tag_name: ap-EC2w2k12
+dyson_instance_tags: ap-EC2w2k12
