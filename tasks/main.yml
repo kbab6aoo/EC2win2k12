@@ -2,7 +2,7 @@
   ec2_group:      
     name: WinRM RDP EU
     description:  Inbound WinRM and RDP
-    vpc_id: "{{ dyson_vpc_id }}"
+    vpc_id: "{{ jagho_vpc_id }}"
     region: "{{ target_aws_region }}"
     rules:
     - proto:  tcp
@@ -24,18 +24,18 @@
 
 - name: Ensuring the instance is running
   ec2:
-    vpc_subnet_id:  "{{ dyson_subnet_id }}"
+    vpc_subnet_id:  "{{ jagho_subnet_id }}"
     region: "{{ target_aws_region }}"
-    image:  "{{ dyson_ami_image }}"
-    instance_type:  "{{ dyson_instance_size }}"
+    image:  "{{ jagho_ami_image }}"
+    instance_type:  "{{ jagho_instance_size }}"
     group_id: "{{ sg_out.group_id }}"
     wait: yes
     wait_timeout: 500
     exact_count:  1
     count_tag:
-      Name: "{{ dyson_count_tag_name }}"
+      Name: "{{ jagho_count_tag_name }}"
     instance_tags:
-      Name: "{{ dyson_instance_tags }}"
+      Name: "{{ jagho_instance_tags }}"
     user_data:  "{{ lookup('template', 'userdata.txt.j2') }}"
   register: ec2_result
 
